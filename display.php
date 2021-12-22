@@ -58,7 +58,7 @@ setlocale(LC_MONETARY, "en_US");
 <div class="detail-info">
 	<ul class="list-group list-group-flush">
 		<li class="list-group-item"><b>Model:</b> <?php echo $model?></li>
-		<li class="list-group-item"><b>Price:</b> <?php echo money_format("%n", $price)?></li>
+		<li class="list-group-item"><b>Price:</b> <?php echo '$' . number_format($price)?></li>
 		<li class="list-group-item"><b>Year:</b> <?php echo $year?></li>
 		<li class="list-group-item"><b>Brand:</b> <?php echo $brand?></li>
 		<li class="list-group-item"><b>Passenger:</b> <?php echo $passenger?></li>

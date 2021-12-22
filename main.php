@@ -63,12 +63,23 @@ setlocale(LC_MONETARY, "en_US");
 
 		<?php
 		
-
 		// FILTERING YOUR DB
-		$displayby = $_GET['displayby'];
-		$displayvalue = $_GET['displayvalue'];
-		$minValue = $_GET[('minvalue') ];
-		$maxValue = $_GET[('maxvalue') ];
+		if (isset($_GET['displayby'])){
+
+			$displayby = $_GET['displayby'];
+		}
+		if (isset($_GET['displayvalue'])){
+			
+			$displayvalue = $_GET['displayvalue'];
+		}
+		if (isset($_GET[('minvalue') ])){
+			
+			$minValue = $_GET[('minvalue') ];
+		}
+		if (isset($_GET[('maxvalue') ])){
+			
+			$maxValue = $_GET[('maxvalue') ];
+		}
 
 		if (isset($displayby) && isset($displayvalue))
 		{
@@ -111,8 +122,6 @@ setlocale(LC_MONETARY, "en_US");
 			$year = ($row['year']);
 			$brand = ($row['brand']);
 			$fileName = $row['image'];
-		
-		
 		?>
 				
 		<section class="border border-3 rounded p-3 display my-4">
@@ -128,7 +137,7 @@ setlocale(LC_MONETARY, "en_US");
 				</p>
 				<p><b>Year:</b> <?php echo $year?></p>
 				<p>
-					<b>Base Prices:</b> <?php echo money_format("%n", $price)?>
+					<b>Base Prices:</b> <?php echo '$' . number_format($price)?>
 				</p>
 				<div class="suv-button">
 					<a href="display.php?vid=<?php echo $vid?>" class="suv-button-link">View Details</a>
