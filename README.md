@@ -1,6 +1,8 @@
 # suv-catalogue-php
 
-Setup in heroku
+[Setup MySQL in heroku](https://www.doabledanny.com/Deploy-PHP-And-MySQL-to-Heroku) 
+
+Tip Steps
 
 - check heroku version `heroku --version`
 - login to heroku `heroku login`
