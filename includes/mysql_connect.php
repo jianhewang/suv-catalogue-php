@@ -1,13 +1,21 @@
 <?php
 
 // Connect to DB: Since all files depend on this, this will be included in our header, which is then included in all files.
-$host = "localhost";
-$username = "jwang118";
-$password = "QbvBKGFnnNKQD5y";
-$dbName = "jwang118";
+// $host = "localhost";
+// $username = "jwang118";
+// $password = "QbvBKGFnnNKQD5y";
+// $dbName = "jwang118";
 
+// $con = mysqli_connect($host, $username, $password, $dbName);
 
-$con = mysqli_connect($host, $username, $password, $dbName);
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$con = mysqli_connect($server, $username, $password, $db);
 
 // Check connection
 if (mysqli_connect_errno()) {
